@@ -24,14 +24,15 @@ class TicketShop extends React.Component {
   };
 
   displayMessage = () => {
-    if (this.state.isConfirmed && this.state.isFormSubmitted) {
-      return <PositiveMessage />;
-    } else {
-      return <NegativeMessage />;
+    if (this.state.isFormSubmitted) {
+      if (this.state.isConfirmed) {
+        return <PositiveMessage />;
+      } else {
+        return <NegativeMessage />;
+      }
     }
   };
   render() {
-    console.log(this.state.isConfirmed);
     return (
       <>
         <h1>Kup bilet na horror roku!</h1>
