@@ -1,7 +1,7 @@
 class App extends React.Component {
   state = {
     availableProducts: 7,
-    shoppingCart: 10
+    shoppingCart: 0
   };
 
   handleRemoveFromCart = () => {
