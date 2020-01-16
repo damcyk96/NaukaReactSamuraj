@@ -15,8 +15,7 @@ button {
   height: 50px;
   cursor: pointer;
   outline: none;
-  
 }
 button:disabled {
-  opacity: 0.3
+  opacity: 0.3;
 }
