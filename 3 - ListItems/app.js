@@ -42,10 +42,12 @@ const Item = ({ user }) => (
 
 class ListItems extends React.Component {
   render() {
-    let users = this.props.data.users;
-    users = users.filter(user => user.sex === "female");
+    const users = this.props.data.users;
+    const filteredUsers = users.filter(user => {
+      return user.sex === "female";
+    });
 
-    const Items = users.map(user => <Item key={user.id} user={user} />);
+    const Items = filteredUsers.map(user => <Item key={user.id} user={user} />);
 
     return <ul>{Items}</ul>;
   }
