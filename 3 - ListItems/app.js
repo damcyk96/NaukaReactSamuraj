@@ -17,10 +17,10 @@ const data = {
   ]
 };
 
-const Item = props => (
+const Item = ({ user }) => (
   <div>
-    <h1>Username: {props.user.firstName}</h1>
-    <h2>Lastname: {props.user.lastName}</h2>
+    <h1>Username: {user.firstName}</h1>
+    <h2>Lastname: {user.lastName}</h2>
   </div>
 );
 
