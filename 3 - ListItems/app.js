@@ -1,16 +1,36 @@
-const Item = props => <li>{`Wyświetl ${props.content}`}</li>;
+const data = {
+  users: [
+    {
+      firstName: "Jacob",
+      lastName: "Daniel",
+      country: "United Stated",
+      city: "Chicago",
+      avatar: "https://randomuser.me/api/portraits/men/81.jpg"
+    },
+    {
+      firstName: "Lauren",
+      lastName: "Gilbert",
+      country: "Australia",
+      city: "Sydney",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+    }
+  ]
+};
+
+const Item = props => (
+  <div>
+    <h1>Username: {props.user.firstName}</h1>
+    <h2>Lastname: {props.user.lastName}</h2>
+  </div>
+);
 
 class ListItems extends React.Component {
-  state = {
-    items: ["test", "test1", "test2", "test3"]
-  };
   render() {
-    const Items = this.state.items.map(item => (
-      <Item key={item} content={item} />
-    ));
+    const users = this.props.data.users;
+    const Items = users.map(user => <Item key={user.id} user={user} />);
 
     return <ul>{Items}</ul>;
   }
 }
 
-ReactDOM.render(<ListItems />, document.getElementById("root"));
+ReactDOM.render(<ListItems data={data} />, document.getElementById("root"));
