@@ -5,13 +5,11 @@ class ListItems extends React.Component {
     items: ["test", "test1", "test2", "test3"]
   };
   render() {
-    return (
-      <ul>
-        {this.state.items.map(item => (
-          <Item key={item} content={item} />
-        ))}
-      </ul>
-    );
+    const Items = this.state.items.map(item => (
+      <Item key={item} content={item} />
+    ));
+
+    return <ul>{Items}</ul>;
   }
 }
 
